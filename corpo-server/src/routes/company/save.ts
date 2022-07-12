@@ -30,13 +30,6 @@ const root: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
       let client: PoolClient | null = null;
 
       try {
-        console.log("-------------------");
-        console.log("-------------------");
-        console.log("-------------------");
-        console.log({ name, cin });
-        console.log("-------------------");
-        console.log("-------------------");
-        console.log("-------------------");
         client = await fastify.pg.connect();
         await client.query(
           SQL`INSERT INTO companies(name, cin) VALUES(${name}, ${cin}) ON CONFLICT (cin) DO NOTHING`
