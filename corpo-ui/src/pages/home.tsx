@@ -51,6 +51,7 @@ export default function Home() {
               displayValue={(corp: string) => corp}
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="start typing..."
+              autoFocus
             />
             <Combobox.Button className="absolute bottom-0 top-6 right-0 flex items-center pr-3">
               {isLoading ? (
